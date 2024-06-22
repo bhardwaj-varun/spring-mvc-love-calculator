@@ -9,7 +9,8 @@ import org.varun.lc.dto.UserInfoDTO;
 public class HomeController {
 
     @GetMapping("/")
-    public String test(){
+    public String test(Model model){
+        model.addAttribute("userInfo", new UserInfoDTO());
         return "home-page";
     }
 
