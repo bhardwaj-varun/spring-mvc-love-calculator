@@ -3,21 +3,19 @@ package org.varun.lc.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.varun.lc.dto.UserInfoDTO;
 
 @Controller
 public class HomeController {
 
     @GetMapping("/")
-    public String test(Model model){
-        model.addAttribute("userInfo", new UserInfoDTO());
+    public String showHomePage(@ModelAttribute("userInfo") UserInfoDTO userInfoDTO){
         return "home-page";
     }
 
     @GetMapping("/process-homepage")
-    public String processHomepage(UserInfoDTO userInfoDto,
-                                  Model model){
-        model.addAttribute("userInfo", userInfoDto);
+    public String processHomepage(@ModelAttribute("userInfo") UserInfoDTO userInfoDTO){
         return "result-page";
     }
 
