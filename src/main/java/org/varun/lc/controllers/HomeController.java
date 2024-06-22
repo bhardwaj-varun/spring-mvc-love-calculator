@@ -3,7 +3,7 @@ package org.varun.lc.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.varun.lc.dto.UserInfoDTO;
 
 @Controller
 public class HomeController {
@@ -14,11 +14,9 @@ public class HomeController {
     }
 
     @GetMapping("/process-homepage")
-    public String processHomepage(@RequestParam("user-name") String userName,
-                                  @RequestParam("crush-name") String crushName,
+    public String processHomepage(UserInfoDTO userInfoDto,
                                   Model model){
-        model.addAttribute("userName", userName);
-        model.addAttribute("crushName", crushName);
+        model.addAttribute("userInfo", userInfoDto);
         return "result-page";
     }
 

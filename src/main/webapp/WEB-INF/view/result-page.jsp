@@ -4,8 +4,8 @@
     <title>Result</title>
 </head>
 <body>
-    User Name: ${userName}
+    User Name: ${userInfo.userName}
     <br>
-    Crush Name: ${crushName}
+    Crush Name: ${userInfo.crushName}
 </body>
 </html>
