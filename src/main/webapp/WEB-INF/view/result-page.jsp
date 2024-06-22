@@ -1,9 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Home</title>
+    <title>Result</title>
 </head>
 <body>
-    Hello World from jsp page.
+    User Name: ${userName}
+    <br>
+    Crush Name: ${crushName}
 </body>
 </html>
