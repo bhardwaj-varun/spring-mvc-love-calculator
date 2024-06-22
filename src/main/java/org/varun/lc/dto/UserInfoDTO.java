@@ -1,8 +1,8 @@
 package org.varun.lc.dto;
 
 public class UserInfoDTO {
-    String userName;
-    String crushName;
+    String userName="Mr kukur";
+    String crushName="Miss chutki";
 
     public String getUserName() {
         return userName;
