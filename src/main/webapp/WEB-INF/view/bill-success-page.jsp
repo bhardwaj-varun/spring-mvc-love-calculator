@@ -13,8 +13,12 @@
     </thead>
     <tbody>
     <tr>
-        <td>Name</td>
+        <td>Card Details: </td>
         <td>${billingInfo.card}</td>
+    </tr>
+    <tr>
+        <td>Amount: </td>
+        <td>${billingInfo.amount}</td>
     </tr>
 
     </tbody>
