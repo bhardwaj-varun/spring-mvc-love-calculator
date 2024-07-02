@@ -1,5 +1,7 @@
 package org.varun.lc.dto;
 
+import org.varun.lc.validators.annotations.Age;
+
 import java.util.Arrays;
 
 public class UserRegistrationDTO {
@@ -9,6 +11,16 @@ public class UserRegistrationDTO {
     private String country;
     private String[] hobbies;
     private String gender;
+    @Age(lower = 5, upper = 90)
+    private Integer age;
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
 
     private  CommunicationDto communicationDto;
 
