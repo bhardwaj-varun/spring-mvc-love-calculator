@@ -87,6 +87,13 @@
                         </label>
                     </div>
                 </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text">Age</span>
+                    <div class="form-text mt-2 ms-2 ">
+                        <form:input class="form-input"  path="age" />
+                        <form:errors path="age" class="text-danger"/>
+                    </div>
+                </div>
                 <div>
                     <h3>Communications</h3>
                     <label>Email: </label><form:input path="communicationDto.email"/>
