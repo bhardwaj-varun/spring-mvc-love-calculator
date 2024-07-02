@@ -24,8 +24,12 @@
         <h1>Enter Billing Details</h1>
         <form:form action="process-bill" modelAttribute="billingInfo" method="get">
             <p>
-             <form:label path="">Card Details: </form:label>
+             <form:label path="card">Card Details: </form:label>
                <form:input path="card"/>
+            </p>
+            <p>
+                <form:label path="amount">Amount: </form:label>
+                <form:input path="amount"/>
             </p>
             <input type="submit" value="submit" id="submit">
         </form:form>

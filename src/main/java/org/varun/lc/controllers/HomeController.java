@@ -5,12 +5,17 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.varun.lc.dto.Amount;
 import org.varun.lc.dto.BillDto;
 import org.varun.lc.dto.Card;
 import org.varun.lc.dto.UserInfoDTO;
 
 import javax.validation.Valid;
+import java.math.BigDecimal;
+import java.text.NumberFormat;
+import java.util.Currency;
 import java.util.List;
+import java.util.Locale;
 
 @Controller
 public class HomeController {
@@ -31,7 +36,7 @@ public class HomeController {
     }
 
     @GetMapping("/bill")
-    public String bill(@ModelAttribute("billingInfo")BillDto billDto, BindingResult bindingResult){
+    public String bill(@ModelAttribute("billingInfo")BillDto billDto){
 
         Card card = new Card();
         card.setFirstFourDigits("1234");
@@ -43,7 +48,7 @@ public class HomeController {
     }
 
     @GetMapping("/process-bill")
-    public String processBill(@ModelAttribute("billingInfo") BillDto billDto, BindingResult bindingResult){
+    public String processBill(@ModelAttribute("billingInfo") BillDto billDto){
         return "bill-success-page";
     }
 

@@ -7,6 +7,7 @@ import org.springframework.format.FormatterRegistry;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
+import org.varun.lc.formatters.AmountFormatter;
 import org.varun.lc.formatters.CardDetailsFormatter;
 import org.varun.lc.formatters.PhoneNumberFormatter;
 
@@ -27,5 +28,6 @@ public class LoveCalculatorApplicationConfig implements WebMvcConfigurer {
     public void addFormatters(FormatterRegistry registry) {
         registry.addFormatter(new PhoneNumberFormatter());
         registry.addFormatter(new CardDetailsFormatter());
+        registry.addFormatter(new AmountFormatter());
     }
 }
