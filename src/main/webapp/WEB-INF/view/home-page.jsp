@@ -29,7 +29,7 @@
         </p>
         <p>
             <form:label path="crushName">Crush Name: </form:label><form:input path="crushName"/>
-            <form:errors path="userName" cssClass="error"/>
+            <form:errors path="crushName" cssClass="error"/>
         </p>
         <p>
             <form:checkbox path="termsAndConditions"/><form:label path="termsAndConditions">Terms and Condition</form:label>
