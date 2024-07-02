@@ -43,7 +43,14 @@
             <td>Gender</td>
             <td>${userReg.gender}</td>
         </tr>
-
+        <tr>
+            <td>Email</td>
+            <td>${userReg.communicationDto.email}</td>
+        </tr>
+        <tr>
+            <td>Phone</td>
+            <td>${userReg.communicationDto.phone}</td>
+        </tr>
 
         </tbody>
     </table>

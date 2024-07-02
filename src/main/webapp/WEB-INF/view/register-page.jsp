@@ -87,6 +87,11 @@
                         </label>
                     </div>
                 </div>
+                <div>
+                    <h3>Communications</h3>
+                    <label>Email: </label><form:input path="communicationDto.email"/>
+                    <label>Phone: </label><form:input path="communicationDto.phone"/>
+                </div>
                 <div class="float-end"><input type="submit" class=" btn btn-primary" /></div>
             </form>
         </div>
