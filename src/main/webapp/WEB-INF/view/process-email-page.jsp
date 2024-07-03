@@ -4,7 +4,7 @@
     <title>Process Email</title>
 </head>
 <body>
-<h1>Hi ${userName}</h1>
+<h1>Hi ${userInfo.userName}</h1>
 <p> Hi your email report is sent to ${emailInfo.email}</p>
 </body>
 </html>

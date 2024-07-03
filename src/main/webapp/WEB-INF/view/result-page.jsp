@@ -4,7 +4,7 @@
     <title>Result</title>
 </head>
 <body>
-    Hi ${userName}
+    Hi ${userInfo.userName}
     <br/>
     ${userInfo.userName} and ${userInfo.crushName} are:
     <br/>

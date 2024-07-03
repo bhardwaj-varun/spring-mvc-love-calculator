@@ -5,7 +5,7 @@
     <title>Send Email</title>
 </head>
 <body>
-<h1>Hi ${userName} </h1>
+<h1>Hi ${userInfo.userName} </h1>
 <p>Send email to your email id</p>
 <p>
 
