@@ -11,6 +11,7 @@ import org.varun.lc.dto.CommunicationDto;
 import org.varun.lc.dto.Phone;
 import org.varun.lc.dto.UserRegistrationDTO;
 import org.varun.lc.properyEditors.NamePropertyEditor;
+import org.varun.lc.validators.EmailValidator;
 import org.varun.lc.validators.UserNameValidator;
 
 import javax.validation.Valid;
@@ -53,6 +54,7 @@ public class RegistrationController {
         dataBinder.registerCustomEditor(String.class, "name", namePropertyEditor);
 
         dataBinder.addValidators(new UserNameValidator());
+        dataBinder.addValidators(new EmailValidator());
     }
 
 
