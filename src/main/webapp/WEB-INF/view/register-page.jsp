@@ -21,6 +21,7 @@
                     <span class="input-group-text " id="name">Name</span>
                     <form:input type="text" class="form-control"
                            aria-describedby="name" path="name"/>
+                    <form:errors path="name" class="text-danger"/>
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="userName">Username</span>

@@ -3,8 +3,10 @@ package org.varun.lc.dto;
 import org.varun.lc.validators.annotations.Age;
 
 import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
 
 public class UserRegistrationDTO {
+    @NotBlank(message = "* can not be empty")
     private String name;
     private String userName;
     private char[] password;
