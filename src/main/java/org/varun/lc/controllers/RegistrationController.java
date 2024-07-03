@@ -1,5 +1,6 @@
 package org.varun.lc.controllers;
 
+import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
@@ -41,6 +42,9 @@ public class RegistrationController {
 
     @InitBinder
     public void initBinder(WebDataBinder dataBinder){
-        dataBinder.setDisallowedFields("name");
+        //true => will remove whitespaces and set to null if if contains only white space
+        //false=> just remove white spaces
+        StringTrimmerEditor stringTrimmerEditor = new StringTrimmerEditor(false);
+        dataBinder.registerCustomEditor(String.class, "name", stringTrimmerEditor);
     }
 }
