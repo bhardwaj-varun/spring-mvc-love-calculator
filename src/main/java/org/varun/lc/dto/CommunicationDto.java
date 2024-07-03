@@ -1,7 +1,11 @@
 package org.varun.lc.dto;
 
+import org.varun.lc.validators.annotations.PhoneValidator;
+
 public class CommunicationDto {
     private String email;
+
+    @PhoneValidator
     private Phone phone;
 
     public String getEmail() {

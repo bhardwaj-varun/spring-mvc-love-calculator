@@ -5,7 +5,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
-import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.format.FormatterRegistry;
 import org.springframework.validation.Validator;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
@@ -22,7 +21,7 @@ import org.varun.lc.formatters.PhoneNumberFormatter;
 public class LoveCalculatorApplicationConfig implements WebMvcConfigurer {
 
     @Bean
-    InternalResourceViewResolver viewResolver(){
+    InternalResourceViewResolver viewResolver() {
         InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
         viewResolver.setPrefix("/WEB-INF/view/");
         viewResolver.setSuffix(".jsp");
@@ -30,19 +29,18 @@ public class LoveCalculatorApplicationConfig implements WebMvcConfigurer {
     }
 
     @Bean
-    MessageSource messageSource(){
+    MessageSource messageSource() {
         ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
         messageSource.setBasename("classpath:messages");
         return messageSource;
     }
+
     @Bean
-    public LocalValidatorFactoryBean validator(){
+    public LocalValidatorFactoryBean validator() {
         LocalValidatorFactoryBean validator = new LocalValidatorFactoryBean();
         validator.setValidationMessageSource(messageSource());
         return validator;
     }
-
-
 
     @Override
     public void addFormatters(FormatterRegistry registry) {
@@ -50,8 +48,9 @@ public class LoveCalculatorApplicationConfig implements WebMvcConfigurer {
         registry.addFormatter(new CardDetailsFormatter());
         registry.addFormatter(new AmountFormatter());
     }
+
     @Override
-    public Validator getValidator(){
+    public Validator getValidator() {
         return validator();
     }
 }
