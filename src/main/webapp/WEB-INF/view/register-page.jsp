@@ -99,8 +99,6 @@
                 <div>
                     <h3>Communications</h3>
                     <label>Email: </label><form:input path="communicationDto.email"/>
-                    <form:errors path="communicationDto.email" class="text-danger"/>
-                    <br>
                     <label>Phone: </label><form:input path="communicationDto.phone"/>
                     <form:errors path="communicationDto.phone" class="text-danger"/>
                 </div>
