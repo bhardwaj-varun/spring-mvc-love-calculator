@@ -1,5 +1,6 @@
 package org.varun.lc.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -19,6 +20,9 @@ import javax.validation.Valid;
 @Controller
 public class RegistrationController {
 
+    @Autowired
+    private EmailValidator emailValidator;
+
     @GetMapping("/register")
     public String register(@ModelAttribute("userReg") UserRegistrationDTO dto) {
 
@@ -36,6 +40,7 @@ public class RegistrationController {
     @GetMapping("/process-registration")
     public String processRegistration(@Valid @ModelAttribute("userReg") UserRegistrationDTO dto, BindingResult bindingResult) {
         System.out.println("In registration process");
+        emailValidator.validate(dto, bindingResult);
         if (bindingResult.hasErrors()) {
             bindingResult.getAllErrors().forEach(error -> System.out.println(error.getDefaultMessage()));
             return "register-page";
@@ -54,7 +59,6 @@ public class RegistrationController {
         dataBinder.registerCustomEditor(String.class, "name", namePropertyEditor);
 
         dataBinder.addValidators(new UserNameValidator());
-        dataBinder.addValidators(new EmailValidator());
     }
 
 

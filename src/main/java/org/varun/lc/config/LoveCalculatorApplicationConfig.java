@@ -19,7 +19,7 @@ import org.varun.lc.formatters.PhoneNumberFormatter;
 
 @EnableWebMvc
 @Configuration
-@ComponentScan(basePackages = "org.varun.lc.controllers")
+@ComponentScan(basePackages ="org.varun.lc.controllers, org.varun.lc")
 public class LoveCalculatorApplicationConfig implements WebMvcConfigurer {
 
     @Bean
