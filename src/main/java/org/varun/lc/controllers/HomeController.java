@@ -14,6 +14,8 @@ import org.varun.lc.dto.UserInfoDTO;
 import org.varun.lc.formatters.CardDetailsFormatter;
 import org.varun.lc.properyEditors.CardDetailsPropertyEditor;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.math.BigDecimal;
 import java.text.NumberFormat;
@@ -30,7 +32,11 @@ public class HomeController {
     }
 
     @GetMapping("/process-homepage")
-    public String processHomepage(@Valid @ModelAttribute("userInfo") UserInfoDTO userInfoDTO, BindingResult bindingResult){
+    public String processHomepage(@Valid @ModelAttribute("userInfo") UserInfoDTO userInfoDTO, BindingResult bindingResult,
+                                  HttpServletRequest request){
+        HttpSession session = request.getSession();
+        session.setAttribute("userName", userInfoDTO.getUserName());
+
         if(bindingResult.hasErrors()){
             List<ObjectError> allErrors = bindingResult.getAllErrors();
             System.out.println(allErrors);
