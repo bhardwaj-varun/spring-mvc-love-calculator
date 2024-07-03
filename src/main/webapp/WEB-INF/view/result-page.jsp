@@ -4,8 +4,12 @@
     <title>Result</title>
 </head>
 <body>
-    User Name: ${userInfo.userName}
-    <br>
-    Crush Name: ${userInfo.crushName}
+    Hi ${userName}
+    <br/>
+    ${userInfo.userName} and ${userInfo.crushName} are:
+    <br/>
+    Friend
+    <br/>
+    <a href="send-email">Send report as email</a>
 </body>
 </html>
