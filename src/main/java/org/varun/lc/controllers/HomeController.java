@@ -58,8 +58,8 @@ public class HomeController {
 
     @InitBinder
     public void InitBinder(WebDataBinder dataBinder){
-        CardDetailsPropertyEditor cardDetailsPropertyEditor =  new CardDetailsPropertyEditor();
-        dataBinder.registerCustomEditor(Card.class, "card",cardDetailsPropertyEditor);
+//        CardDetailsPropertyEditor cardDetailsPropertyEditor =  new CardDetailsPropertyEditor();
+//        dataBinder.registerCustomEditor(Card.class, "card",cardDetailsPropertyEditor);
 
     }
 }
