@@ -3,12 +3,15 @@ package org.varun.lc.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.varun.lc.dto.Amount;
 import org.varun.lc.dto.BillDto;
 import org.varun.lc.dto.Card;
 import org.varun.lc.dto.UserInfoDTO;
+import org.varun.lc.formatters.CardDetailsFormatter;
 
 import javax.validation.Valid;
 import java.math.BigDecimal;
@@ -52,4 +55,8 @@ public class HomeController {
         return "bill-success-page";
     }
 
+    @InitBinder
+    public void InitBinder(WebDataBinder dataBinder){
+        dataBinder.addCustomFormatter(new CardDetailsFormatter());
+    }
 }

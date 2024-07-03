@@ -45,7 +45,6 @@ public class LoveCalculatorApplicationConfig implements WebMvcConfigurer {
     @Override
     public void addFormatters(FormatterRegistry registry) {
         registry.addFormatter(new PhoneNumberFormatter());
-        registry.addFormatter(new CardDetailsFormatter());
         registry.addFormatter(new AmountFormatter());
     }
 
