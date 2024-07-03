@@ -2,11 +2,11 @@ package org.varun.lc.dto;
 
 import org.varun.lc.validators.annotations.Age;
 
-import java.util.Arrays;
+import javax.validation.Valid;
 
 public class UserRegistrationDTO {
-    private String name="Kukurwa";
-    private String userName="beanwa";
+    private String name;
+    private String userName;
     private char[] password;
     private String country;
     private String[] hobbies;
@@ -22,7 +22,8 @@ public class UserRegistrationDTO {
         this.age = age;
     }
 
-    private  CommunicationDto communicationDto;
+    @Valid
+    private CommunicationDto communicationDto;
 
     public CommunicationDto getCommunicationDto() {
         return communicationDto;

@@ -98,6 +98,7 @@
                     <h3>Communications</h3>
                     <label>Email: </label><form:input path="communicationDto.email"/>
                     <label>Phone: </label><form:input path="communicationDto.phone"/>
+                    <form:errors path="communicationDto.phone" class="text-danger"/>
                 </div>
                 <div class="float-end"><input type="submit" class=" btn btn-primary" /></div>
             </form>
