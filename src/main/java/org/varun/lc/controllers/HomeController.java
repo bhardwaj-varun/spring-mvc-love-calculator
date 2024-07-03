@@ -12,6 +12,7 @@ import org.varun.lc.dto.BillDto;
 import org.varun.lc.dto.Card;
 import org.varun.lc.dto.UserInfoDTO;
 import org.varun.lc.formatters.CardDetailsFormatter;
+import org.varun.lc.properyEditors.CardDetailsPropertyEditor;
 
 import javax.validation.Valid;
 import java.math.BigDecimal;
@@ -57,6 +58,8 @@ public class HomeController {
 
     @InitBinder
     public void InitBinder(WebDataBinder dataBinder){
-        dataBinder.addCustomFormatter(new CardDetailsFormatter());
+        CardDetailsPropertyEditor cardDetailsPropertyEditor =  new CardDetailsPropertyEditor();
+        dataBinder.registerCustomEditor(Card.class, "card",cardDetailsPropertyEditor);
+
     }
 }
