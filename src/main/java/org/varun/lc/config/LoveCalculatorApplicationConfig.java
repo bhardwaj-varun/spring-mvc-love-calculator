@@ -11,6 +11,8 @@ import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
+import org.varun.lc.converters.CreditCardConverter;
+import org.varun.lc.converters.CreditCardConverterObjectToString;
 import org.varun.lc.formatters.AmountFormatter;
 import org.varun.lc.formatters.CardDetailsFormatter;
 import org.varun.lc.formatters.PhoneNumberFormatter;
@@ -46,6 +48,8 @@ public class LoveCalculatorApplicationConfig implements WebMvcConfigurer {
     public void addFormatters(FormatterRegistry registry) {
         registry.addFormatter(new PhoneNumberFormatter());
         registry.addFormatter(new AmountFormatter());
+        registry.addConverter(new CreditCardConverter());
+        registry.addConverter(new CreditCardConverterObjectToString());
     }
 
     @Override
