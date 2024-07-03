@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.varun.lc.dto.CommunicationDto;
 import org.varun.lc.dto.Phone;
 import org.varun.lc.dto.UserRegistrationDTO;
+import org.varun.lc.properyEditors.NamePropertyEditor;
 
 import javax.validation.Valid;
 
@@ -46,5 +47,10 @@ public class RegistrationController {
         //false=> just remove white spaces
         StringTrimmerEditor stringTrimmerEditor = new StringTrimmerEditor(false);
         dataBinder.registerCustomEditor(String.class, "name", stringTrimmerEditor);
+
+        NamePropertyEditor namePropertyEditor = new NamePropertyEditor();
+        dataBinder.registerCustomEditor(String.class, "name", namePropertyEditor);
     }
+
+
 }
