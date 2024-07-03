@@ -1,11 +1,13 @@
 package org.varun.lc.validators;
 
+import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 import org.varun.lc.dto.CommunicationDto;
 import org.varun.lc.dto.UserRegistrationDTO;
 
+@Component
 public class EmailValidator implements Validator {
     //check if the object matches the dto object
     @Override
