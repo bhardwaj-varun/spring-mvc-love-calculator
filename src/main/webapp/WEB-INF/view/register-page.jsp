@@ -27,6 +27,7 @@
                     <span class="input-group-text" id="userName">Username</span>
                     <form:input type="text" class="form-control"
                            aria-describedby="userName" path="userName"/>
+                    <form:errors path="userName" class="text-danger"/>
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="password">Password</span>
